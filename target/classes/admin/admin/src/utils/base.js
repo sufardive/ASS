@@ -9,7 +9,7 @@ const base = {
     },
     getProjectName(){
         return {
-            projectName: "东北特产销售系统"
+            projectName: "马边特色产品销售系统"
         } 
     }
 }
