@@ -344,32 +344,6 @@ public class NonghuController {
     }
 
     /**
-    * 注册
-    */
-    @IgnoreAuth
-    @PostMapping(value = "/register")
-    public R register(@RequestBody NonghuEntity nonghu, HttpServletRequest request) {
-//    	ValidatorUtils.validateEntity(user);
-        Wrapper<NonghuEntity> queryWrapper = new EntityWrapper<NonghuEntity>()
-            .eq("username", nonghu.getUsername())
-            .or()
-            .eq("nonghu_phone", nonghu.getNonghuPhone())
-            .or()
-            .eq("nonghu_id_number", nonghu.getNonghuIdNumber())
-            ;
-        NonghuEntity nonghuEntity = nonghuService.selectOne(queryWrapper);
-        if(nonghuEntity != null)
-            return R.error("账户或者农户手机号或者农户身份证号已经被使用");
-        nonghu.setNonghuUuidNumber(String.valueOf(new Date().getTime()));
-        nonghu.setNewMoney(0.0);
-        nonghu.setJinyongTypes(1);//启用
-        nonghu.setCreateTime(new Date());
-        nonghuService.insert(nonghu);
-
-        return R.ok();
-    }
-
-    /**
      * 重置密码
      */
     @GetMapping(value = "/resetPassword")
