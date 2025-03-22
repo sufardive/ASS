@@ -306,16 +306,6 @@ const menu = {
                                 "menuJump":"列表",
                                 "tableName":"shangpinOrder"
                             }
-                            ,
-                            {
-                                "buttons":[
-                                    "查看",
-                                    "新增"
-                                ],
-                                "menu":"帮扶申请管理",
-                                "menuJump":"列表",
-                                "tableName":"shangpinBangfushenqing"
-                            }
                         ],
                         "menu":"商品管理"
                     }
